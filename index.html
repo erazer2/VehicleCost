@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Cost calculator</title>
+
+    <script src="calculations.js"></script>
+
+    <script src="interface.js"></script>
+</head>
+<body>
+
+<div id="menu"> 
+
+</div>    
+
+
+<div id="mainCalculatorBox">
+
+    <h2 id="mainHeader">Vehicle Cost Calculator</h2>
+    
+    <div id="subMenu"> 
+        <button onclick=showHydroCarbonSection();>Petrol/diesel</button>
+        <button onclick=showElectricSection();>Electric</button>
+    </div>
+
+    <div id="calculationsBit">
+
+        <div id="calculatorBrief">See cost of fuel used in car
+        <div id="inputsPart">
+
+ 
+
+<div id="electricSection">
+
+ 
+<input class="dataEntryBox" id="batteryCapacity" value="100"><span>KiloWatt Hours in battery</span>
+<br>
+
+<input class="dataEntryBox" id="batteryRange" value="200"><span>Miles from full charge</span>
+<br>
+    
+<input class="dataEntryBox"id="electricityCost" value="20"><span>pence per KiloWatt Hour</span>
+<br>
+
+</div>
+
+
+
+
+
+<div id="hydrocarbonSection">
+
+    <input class="dataEntryBox" id="milesPerGallon" value="50"><span>Miles per Gallon</span>
+    <br>
+    
+        
+    <input class="dataEntryBox" id="hydrocarbonCost" value="180"><span>pence per Litre</span>
+    <br>
+</div>   
+
+
+</div>
+
+<div id="outputsPart">
+<div id="costPerMile">10 pence per mile</div>
+
+</div>
+
+<br>
+
+<div style="display:none">
+<button onclick="calculateElectricVehicleCost()">calculate</button>
+
+<button id="modernWayButton">calculate not inline</button>
+
+</div>
+
+
+
+</body>
+
+<script>
+
+showElectricSection();
+
+document.getElementById("modernWayButton").addEventListener("click",calculateElectricVehicleCost);
+document.getElementById("electricityCost").addEventListener("keyup",calculateElectricVehicleCost);
+document.getElementById("batteryRange").addEventListener("keyup",calculateElectricVehicleCost);
+document.getElementById("batteryCapacity").addEventListener("keyup",calculateElectricVehicleCost);
+
+
+document.getElementById("hydrocarbonCost").addEventListener("keyup",calculateHydroCarbonVehicleCost);
+document.getElementById("milesPerGallon").addEventListener("keyup",calculateHydroCarbonVehicleCost);
+
+
+
+</script>
+</html>
