@@ -6,9 +6,9 @@ let calculateElectricVehicleCost=()=>{
         range=document.getElementById("batteryRange").value;
         electricCost=document.getElementById("electricityCost").value;
     
-        calculations=(capacity*electricCost/range);
+        calculations=(capacity*electricCost/range).toFixed(2);
     
-        document.getElementById("costPerMile").innerHTML="Costs "+ calculations +" pence per mile";
+        document.getElementById("costPerMile").innerHTML="This will cost you "+ calculations +" Pence per mile you drive";
     console.log("calculated");
     }
 
@@ -21,9 +21,9 @@ let calculateElectricVehicleCost=()=>{
             
             fuelCost=document.getElementById("hydrocarbonCost").value;
         
-            calculations=(fuelCost*litersPerGallon/consumptionRate);
+            calculations=(fuelCost*litersPerGallon/consumptionRate).toFixed(2);
         
-            document.getElementById("costPerMile").innerHTML="Costs "+ calculations +" pence per mile";
+            document.getElementById("costPerMile").innerHTML="This will cost you "+ calculations +" Pence per mile you drive";
             console.log(calculations);
         console.log("calculated");
         }

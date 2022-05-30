@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 
-    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="style.css">-->
+
+    <link id="styleToUse" rel="stylesheet" href="simpleStyle.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,27 +26,33 @@
     <h2 id="mainHeader">Vehicle Cost Calculator</h2>
     
     <div id="subMenu"> 
-        <button onclick=showHydroCarbonSection();>Petrol/Diesel</button>
-        <button onclick=showElectricSection();>Electric</button>
+        
+        
+        <img id="electricButton" src="img/electricty.svg" onclick="showElectricSection();"><span id="headingElectricButton" class="buttonHeadings" onclick="showElectricSection();">Electric</span>
+        <img id="hydroCarbonButton" src="img/petrol.svg" onclick="showHydroCarbonSection();"><span id="headingHydroCarbonButton" class="buttonHeadings" onclick="showHydroCarbonSection();">Petrol/Diesel</span>
     </div>
 
     <div id="calculationsBit">
 
-        <div id="calculatorBrief">Lets calculate how much your car costs per mile
+        <div id="calculatorBrief">Let us calculate how much your car costs per mile
 <div id="inputsPart">
 
  
+<hr style="width:50%">
 
 <div id="electricSection">
 
- 
-<input class="dataEntryBox" id="batteryCapacity" value="100"><span>Battery capacity (KiloWatt Hours KWhr)</span>
+<div class="inputTitle">Battery capacity</div>
+<input class="dataEntryBox" id="batteryCapacity" value="100"><span class="unitsTitle">KiloWatt Hours(KWhr)</span>
 <br>
 
-<input class="dataEntryBox" id="batteryRange" value="200"><span>Battery range  from full charge (Miles)</span>
+<hr style="width:50%">
+<div class="inputTitle">Battery range  from full charge</div>
+<input class="dataEntryBox" id="batteryRange" value="200"><span class="unitsTitle">Miles</span>
 <br>
-    
-<input class="dataEntryBox"id="electricityCost" value="20"><span>pence per KiloWatt Hour</span>
+<hr style="width:50%">
+<div class="inputTitle">Cost of Electricity</div>    
+<input class="dataEntryBox"id="electricityCost" value="20"><span class="unitsTitle">Pence per KiloWatt Hour</span>
 <br>
 
 </div>
@@ -54,18 +62,18 @@
 
 
 <div id="hydrocarbonSection">
-
-    <input class="dataEntryBox" id="milesPerGallon" value="50"><span>Miles per Gallon</span>
+    <div class="inputTitle">Fuel Consumption</div>
+    <input class="dataEntryBox" id="milesPerGallon" value="50"><span class="unitsTitle">Miles per Gallon</span>
     <br>
     
-        
-    <input class="dataEntryBox" id="hydrocarbonCost" value="180"><span>pence per Litre</span>
+    <div class="inputTitle">Fuel Cost</div>   
+    <input class="dataEntryBox" id="hydrocarbonCost" value="180"><span class="unitsTitle">Pence per Litre</span>
     <br>
 </div>   
 
 
 </div>
-
+<hr style="width:50%">
 <div id="outputsPart">
 <div id="costPerMile">10 pence per mile</div>
 
@@ -100,4 +108,6 @@ document.getElementById("milesPerGallon").addEventListener("keyup",calculateHydr
 
 
 </script>
+
+<img id="toggleStyleIcon" src="/img/darkmodeIcon.svg" onclick="toggleTheStyle()">
 </html>
