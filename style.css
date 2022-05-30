@@ -100,6 +100,7 @@ body{
     padding: 5px;
     background-color:rgba(0, 0, 0, 0.541) ;
     border-radius: 10px;
+    display: inline-block;
 }
 
 #result{
@@ -212,7 +213,7 @@ button{
     width:40px;
    }
    
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 440px) {
     #headingHydroCarbonButton {display: none; }
     #headingElectricButton {display: none; }
 }
